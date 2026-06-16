@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import pickle
+from sklearn.preprocessing import StandardScaler
 
 # Load model
 model = pickle.load(open("model.pkl", "rb"))
@@ -18,8 +19,12 @@ input_data = {}
 for col in columns:
     input_data[col] = st.number_input(f"{col}", value=0.0)
 
+# Scale the input data
+scaler = StandardScaler()
+input_data_scaled = scaler.fit_transform(pd.DataFrame([input_data]))
+
 # Convert to DataFrame
-input_df = pd.DataFrame([input_data])
+input_df = pd.DataFrame([input_data_scaled], columns=columns)
 
 # Prediction
 if st.button("Predict"):
