@@ -1,13 +1,15 @@
 import streamlit as st
 import pandas as pd
 import pickle
-from sklearn.preprocessing import StandardScaler
 
 # Load model
 model = pickle.load(open("model.pkl", "rb"))
 
 # Load columns
 columns = pickle.load(open("columns.pkl", "rb"))
+
+# Load Scaler
+scaler = pickle.load(open("scaler.pkl", "rb"))
 
 st.title("💳 Credit Card Fraud Detection")
 
@@ -20,8 +22,7 @@ for col in columns:
     input_data[col] = st.number_input(f"{col}", value=0.0)
 
 # Scale the input data
-scaler = StandardScaler()
-input_data_scaled = scaler.fit_transform(pd.DataFrame([input_data]))
+input_data_scaled = scaler.transform(pd.DataFrame([input_data]))
 
 # Convert to DataFrame
 input_df = pd.DataFrame([input_data_scaled.reshape(-1)], columns=columns)
