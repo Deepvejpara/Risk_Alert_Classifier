@@ -1,5 +1,7 @@
 # 💳 Credit Card Fraud Detection System
 
+[🚀 Live Demo - Risk Alert Classifier](https://riskalertclassifier-w4yipmfftdyaeqifsqwn2m.streamlit.app/)
+
 ## 📌 Project Overview
 This project focuses on detecting fraudulent credit card transactions using Machine Learning techniques. The dataset is highly imbalanced, so special techniques like SMOTE and hyperparameter tuning are used to improve model performance.
 
