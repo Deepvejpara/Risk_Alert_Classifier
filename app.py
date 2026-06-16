@@ -3,13 +3,13 @@ import pandas as pd
 import pickle
 
 # Load model
-model = pickle.load(open("model.pkl", "rb"))
+model = pickle.load(open("app_data/model.pkl", "rb"))
 
 # Load columns
-columns = pickle.load(open("columns.pkl", "rb"))
+columns = pickle.load(open("app_data/columns.pkl", "rb"))
 
 # Load Scaler
-scaler = pickle.load(open("scaler.pkl", "rb"))
+scaler = pickle.load(open("app_data/scaler.pkl", "rb"))
 
 st.title("💳 Credit Card Fraud Detection")
 
