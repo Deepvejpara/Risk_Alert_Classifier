@@ -24,7 +24,7 @@ scaler = StandardScaler()
 input_data_scaled = scaler.fit_transform(pd.DataFrame([input_data]))
 
 # Convert to DataFrame
-input_df = pd.DataFrame([input_data_scaled], columns=columns)
+input_df = pd.DataFrame([input_data_scaled.reshape(-1)], columns=columns)
 
 # Prediction
 if st.button("Predict"):
