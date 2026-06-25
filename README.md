@@ -144,7 +144,7 @@ fraud-detection/
 ---
 ## 👨‍💻 Author
 **Deep**  
-Aspiring Data Analyst & Cloud Engineer 🚀  
+Aspiring Data Analyst 🚀  
 
 ---
 
